@@ -1,62 +1,47 @@
-// getElementById (Capturar elemento pelo Id)
-// console.log(estoqueProduto)
-// estoqueProduto.querySelector (Seleciona por consulta)
-
-let novoParagrafo = document.createElement("p");
-novoParagrafo.innerText = `Hello`;
-
-let card = document.querySelector(".card-body");
-
-let estoqueProduto = document.getElementById("estoqueProduto");
-let mensagem = document.getElementById("mensagem");
-let estoque = 10;
-
-//  ---- botao de comprar produtos ---- //
-
-function comprarProduto() {
-  if (estoque > 0) {
-    estoque--;
-    estoqueProduto.innerText = `Estoque ${estoque} unidades`;
-    mensagem.className = "text-success fw-bold";
-    // mensagem.innerText = `Compra realizada com sucesso!`;
-    card.appendChild(novoParagrafo);
-  } else {
-    mensagem.innerText = `Produto esgotado!`;
-  }
-}
-
-//  ---- botao de resetar produtos ---- //
-
-function resetarProduto() {
-  estoque = 10;
-  estoqueProduto.innerText = `Estoque: 10 unidades`;
-  mensagem.innerText = ``;
-
-  novoParagrafo.remove();
-}
-
-// ---- Capturar os elementos dentro da classe Produto ---- //
-
-let produtos = document.querySelectorAll(".produto");
-
-//  ---- Selecionar as arrays (lista)  ---- //
-
-produtos.forEach((produto) => {
-  console.log(produto);
-});
-console.log(produtos);
-
-// ---- Mostrar nome dos produtos ---- //
+// ---- Funcionalidades ---- //
 
 let nomeProduto = document.querySelector("#nomeProduto");
+let precoProduto = document.querySelector("#precoProduto");
+let estoqueProduto = document.querySelector("#estoqueProduto");
 
-console.log(card.children);
+// ---- Botões ---- //
 
-// ---- Mostrar botão no console ---- //
-
+let btnComprar = document.querySelector("#btnComprar");
 let btnReset = document.querySelector("#btnReset");
-let btnComprar = btnReset.previousElementSibling;
-let hr = btnReset.nextElementSibling;
 
-console.log(btnComprar);
-console.log(hr);
+// ---- mensagens ---- //
+
+let mensagem = document.querySelector("#mensagem");
+
+// ---- declarando valores ---- //
+
+let estoque = 10;
+let preco = 59.9;
+
+// ---- eventos ---- //
+
+btnComprar.addEventListener("click", () => {
+  if (estoque > 0) {
+    estoque--;
+    if (estoque < 6) {
+      preco = preco + preco * 0.05; // Atumentar 5%
+      precoProduto.innerText = `Preço: R$ ${preco.toFixed(2)}`; // Mostrar o preco
+    }
+    estoqueProduto.innerText = `Estoque: ${estoque} unidades`; // Mostrar o estoque
+
+    mensagem.innerText = `Compra realizada com sucesso!`; // Mensagem de compra realizada
+    mensagem.className = `text-success fw-bold`; // Classe de estilização
+  } else {
+    mensagem.innerText = `Produto esgotado`; //Mensagem de produto esgotado
+    mensagem.className = `text-danger fw-bold`; // Classe de estilização
+  }
+
+  btnReset.addEventListener("click", () => {
+    estoque = 10;
+    preco = 59.9;
+
+    estoqueProduto.innerText = `Estoque: ${estoque} unidades`;
+    precoProduto.innerText = `Preço: R$ ${preco.toFixed(2)}`; // Mostrar o preco
+    mensagem.innerText = "";
+  });
+});
