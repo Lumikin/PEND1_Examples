@@ -2,6 +2,11 @@
 // console.log(estoqueProduto)
 // estoqueProduto.querySelector (Seleciona por consulta)
 
+let novoParagrafo = document.createElement("p");
+novoParagrafo.innerText = `Hello`;
+
+let card = document.querySelector(".card-body");
+
 let estoqueProduto = document.getElementById("estoqueProduto");
 let mensagem = document.getElementById("mensagem");
 let estoque = 10;
@@ -12,7 +17,9 @@ function comprarProduto() {
   if (estoque > 0) {
     estoque--;
     estoqueProduto.innerText = `Estoque ${estoque} unidades`;
-    mensagem.innerText = `Compra realizada com sucesso!`;
+    mensagem.className = "text-success fw-bold";
+    // mensagem.innerText = `Compra realizada com sucesso!`;
+    card.appendChild(novoParagrafo);
   } else {
     mensagem.innerText = `Produto esgotado!`;
   }
@@ -24,6 +31,8 @@ function resetarProduto() {
   estoque = 10;
   estoqueProduto.innerText = `Estoque: 10 unidades`;
   mensagem.innerText = ``;
+
+  novoParagrafo.remove();
 }
 
 // ---- Capturar os elementos dentro da classe Produto ---- //
@@ -40,8 +49,6 @@ console.log(produtos);
 // ---- Mostrar nome dos produtos ---- //
 
 let nomeProduto = document.querySelector("#nomeProduto");
-
-let card = nomeProduto.parentElement;
 
 console.log(card.children);
 
