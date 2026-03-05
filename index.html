@@ -1,68 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-  <!-- Define o conjunto de caracteres -->
-  <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Loja Espricio</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Loja Espricio</h1>
+        <nav class="menu">
+          <a href="#home">home</a>
+          <a href="#perfil">perfil</a>
+          <a href="#sobre">sobre</a>
+        </nav>
+      </header>
 
-  <!-- Título da página -->
-  <title>Loja Espricio</title>
+      <h1>Produtos Em Destaque</h1>
 
-  <!-- Importa o CSS do Bootstrap -->
-  <link 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
-    rel="stylesheet">
-</head>
+      <section class="vitrine">
+        <div class="produto">
+          <span class="Bedge">Novo</span>
+          <h2>Camiseta</h2>
+          <p>R$ 49,90</p>
+        </div>
 
-<!-- Fundo claro -->
-<body class="bg-light">
+        <div class="produto">
+          <h2>Calça Jeans</h2>
+          <p>R$ 129,90</p>
+        </div>
 
-  <!-- Container principal -->
-  <main class="container mt-5">
+        <div class="produto">
+          <h2>Tênis</h2>
+          <p>R$ 199,90</p>
+        </div>
+      </section>
 
-    <!-- Título da loja -->
-    <h1 id="tituloLoja" class="text-center mb-4">
-      🛒 Loja Espricio
-    </h1>
-
-    <!-- Card do produto -->
-    <div class="card">
-      <div class="card-body">
-
-        <!-- Nome do produto -->
-        <h5 id="nomeProduto" class="card-title">
-          Camiseta Espricio
-        </h5>
-
-        <!-- Preço do produto -->
-        <p id="precoProduto" class="card-text">
-          Preço: R$ 59.90
-        </p>
-
-        <!-- Estoque disponível -->
-        <p id="estoqueProduto">
-          Estoque: 10 unidades
-        </p>
-
-        <!-- Botão de compra -->
-        <button id="btnComprar" class="btn btn-success" onclick="comprarProduto()">
-          Comprar
-        </button>
-
-        <!-- Botão para resetar o estoque -->
-        <button id="btnReset" class="btn btn-secondary ms-2" onclick="resetarProduto()">
-          Resetar
-        </button>
-
-        <hr>
-
-        <!-- Mensagem de feedback -->
-        <p id="mensagem" class="fw-bold"></p>
-
-      </div>
-    </div>
-  </main>
-
-  <!-- Script JavaScript -->
-  <script src="script.js"></script>
-</body>
+      <footer>© 2026 - Loja Espricio | Todos os direiros reservados</footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
