@@ -25,17 +25,17 @@ function criarImagemPiloto(piloto) {
 }
 
 async function exibirPilotos() {
-    const listaPilotos = await buscarPilotos();
-    const driversConteiner = document.querySelector("#drivers");
-    
-    listaPilotos.forEach(piloto => {
-        if (piloto.headshot_url) {
-            const coluna = criarColuna();
-            const imgPiloto = criarImagemPiloto(piloto);
-            coluna.appendChild(imgPiloto);
-            driversConteiner.appendChild(coluna);
-        }
-    });
+  const listaPilotos = await buscarPilotos();
+  const driversConteiner = document.querySelector("#drivers");
+
+  listaPilotos.forEach((piloto) => {
+    if (piloto.headshot_url) {
+      const coluna = criarColuna();
+      const imgPiloto = criarImagemPiloto(piloto);
+      coluna.appendChild(imgPiloto);
+      driversConteiner.appendChild(coluna);
+    }
+  });
 }
 
 exibirPilotos();
