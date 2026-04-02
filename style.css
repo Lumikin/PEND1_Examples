@@ -1,14 +1,17 @@
 :root {
   --bs-primary: #a83838;
   --bs-primary-rgb: #f9e8e8;
+
   --primary-60: #fff3e6;
   --secondary-30: #6f2c3e;
-  --tertiary-10: #6f2c3e;
+  --tertiary-10: #f9e8e8;
 }
+
 body {
   font-family: "Rajdhani", sans-serif;
   background-color: var(--primary-60);
 }
+
 .header-f1 {
   color: var(--secondary-30);
   padding: 2rem;
@@ -32,9 +35,9 @@ body {
 
 .card-piloto {
   width: 100%;
-  min-width: 300px;
+  min-height: 300px;
   padding: 1rem;
-  color: white;
+  color: #ffff;
   border-radius: 20px;
 
   overflow: hidden;
@@ -45,12 +48,12 @@ body {
 
   position: relative;
 }
+
 .img-piloto {
   width: 50%;
   height: 250px;
 
   object-fit: cover;
-
   object-position: top;
 
   position: absolute;
@@ -59,25 +62,32 @@ body {
 
   z-index: 100;
 }
+
 .titulo-card {
   width: 100%;
   position: relative;
   text-align: left;
 }
-.span-card{
-    position: absolute;
-    top: 50px;
-    left: 0;
-    writing-mode: vertical-rl;
-    
-    transform: rotate(360deg);
-    
-    font-weight: bold;
-    font-size: 1.8rem;
+
+.span-card {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  writing-mode: vertical-rl;
+
+  transform: rotate(360deg);
+
+  font-weight: bold;
+  font-size: 1.8rem;
 }
-.paragrafo-equipe{
-    position: relative;
-    top: 10px;
-    right: 10px;
-    opacity: 0.3;
+
+.paragrafo-equipe {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0.3;
+  font-size: 1.2rem;
+}
+.drop-shadow {
+  filter: drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.5));
 }
