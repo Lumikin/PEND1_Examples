@@ -1,0 +1,11 @@
+:root {
+  --bs-primary: #a83838;
+  --bs-primary-rgb: #f9e8e8;
+  --primary-60: #fff3e6;
+  --secondary-30: #6f2c3e;
+  --tertiary-10: #6f2c3e;
+}
+body {
+  font-family: "Rajdhani", sans-serif;
+  background-color: var(--primary-60);
+}
