@@ -1,3 +1,4 @@
+// OI :3c
 import criarNavbar, {
   ativarMenu,
 } from "./components/layout/navbar.component.js";
