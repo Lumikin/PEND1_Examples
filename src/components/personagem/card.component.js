@@ -2,7 +2,11 @@
 
 import { criarBotaoFavorito } from "./buttom.component.js";
 import criarImagemPersonagem from "./imagem.component.js";
-
+import {
+  salvarFavorito,
+  ehFavorito,
+  removerFavorito,
+} from "../../storage/favoritos.storage.js";
 export default function criarCardPersonagem(personagem) {
   const card = document.createElement("div");
   card.className = "card personagem-card border-0";
@@ -15,8 +19,23 @@ export default function criarCardPersonagem(personagem) {
 
   const btnConteiner = document.createElement("div");
   btnConteiner.className = "position-absolute top-0 end-0 m-2";
+  let favoritos = ehFavorito(personagem);
+  if (favoritos) {
+    card.classList.add("favorito");
+  }
 
   const buttom = criarBotaoFavorito();
+
+  buttom.addEventListener("click", () => {
+    favoritos = !favoritos;
+    card.classList.toggle('favorito', favoritos);
+    if (favoritos) {
+      salvarFavorito(personagem);
+    } else {
+      removerFavorito(personagem);
+    }
+  });
+
   btnConteiner.appendChild(buttom);
   imageConteiner.append(image, btnConteiner);
 
@@ -35,5 +54,5 @@ export default function criarCardPersonagem(personagem) {
 
   card.append(imageConteiner, cardBody);
 
-  return card
+  return card;
 }
