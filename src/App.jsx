@@ -1,8 +1,11 @@
 import Home from "./pages/home";
+import { ThemeProvider } from "./contexts/themeContext";
 function App() {
   return (
     <>
-      <Home />
+      <ThemeProvider>
+        <Home />
+      </ThemeProvider>
     </>
   );
 }

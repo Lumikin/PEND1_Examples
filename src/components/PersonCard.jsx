@@ -1,4 +1,4 @@
-export default function PersonCard({ person }) {
+export default function PersonCard({ person, onClick }) {
   return (
     <div className="card p-3 mb-3 shadow-sm">
       <h5>{person.name}</h5>
