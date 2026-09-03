@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Professor React",
+    "email": "professor@react.com",
+    "password": "$2a$10$MmRswWGb1RsQ6Nr3oz2Ay.OC3axVO76f5DxneRMW6sa1gsuuGs3py",
+    "role": "professor"
+  },
+  {
+    "id": 2,
+    "name": "Aluno Dev",
+    "email": "aluno@react.com",
+    "password": "$2a$10$6prXNfRQWO1jI7cvESyk1eAEqFQdiZRD1Dbn2v9udlHqOn5j1L6q6",
+    "role": "aluno"
+  }
+]
